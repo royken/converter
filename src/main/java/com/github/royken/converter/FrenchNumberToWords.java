@@ -3,59 +3,58 @@ package com.github.royken.converter;
 import java.text.DecimalFormat;
 
 /**
- *
  * @author Kenfack Valmy-Roi <roykenvalmy@gmail.com>
  */
 public class FrenchNumberToWords {
 
     private static final String[] dizaineNames = {
-        "",
-        "",
-        "vingt",
-        "trente",
-        "quarante",
-        "cinquante",
-        "soixante",
-        "soixante",
-        "quatre-vingt",
-        "quatre-vingt"
+            "",
+            "",
+            "vingt",
+            "trente",
+            "quarante",
+            "cinquante",
+            "soixante",
+            "soixante",
+            "quatre-vingt",
+            "quatre-vingt"
     };
 
     private static final String[] uniteNames1 = {
-        "",
-        "un",
-        "deux",
-        "trois",
-        "quatre",
-        "cinq",
-        "six",
-        "sept",
-        "huit",
-        "neuf",
-        "dix",
-        "onze",
-        "douze",
-        "treize",
-        "quatorze",
-        "quinze",
-        "seize",
-        "dix-sept",
-        "dix-huit",
-        "dix-neuf"
+            "",
+            "un",
+            "deux",
+            "trois",
+            "quatre",
+            "cinq",
+            "six",
+            "sept",
+            "huit",
+            "neuf",
+            "dix",
+            "onze",
+            "douze",
+            "treize",
+            "quatorze",
+            "quinze",
+            "seize",
+            "dix-sept",
+            "dix-huit",
+            "dix-neuf"
     };
 
     private static final String[] uniteNames2 = {
-        "",
-        "",
-        "deux",
-        "trois",
-        "quatre",
-        "cinq",
-        "six",
-        "sept",
-        "huit",
-        "neuf",
-        "dix"
+            "",
+            "",
+            "deux",
+            "trois",
+            "quatre",
+            "cinq",
+            "six",
+            "sept",
+            "huit",
+            "neuf",
+            "dix"
     };
 
     private FrenchNumberToWords() {
@@ -224,7 +223,9 @@ public class FrenchNumberToWords {
         String tradMille;
         tradMille = convertLessThanOneThousand(lesMille);
         resultat = resultat + tradMille;
-
+        if (resultat.endsWith("quatre-vingt")) {
+            resultat = resultat + "s";
+        }
         return resultat;
     }
 
